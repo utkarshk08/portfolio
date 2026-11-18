@@ -39,3 +39,9 @@ html[data-theme=dark] .expense-visual{background:#3b5147}html[data-theme=dark] .
 @media(max-width:1150px){.beyond-section{gap:45px;grid-template-columns:.8fr 1.2fr}.beyond-heading h2{font-size:52px}.ambassador-entry{padding-left:24px}.ambassador-entry h3{font-size:25px}}
 @media(max-width:900px){.beyond-section{grid-template-columns:1fr;gap:35px;padding-top:65px}.beyond-heading h2{font-size:50px}.beyond-heading>p:last-child{margin-top:17px}.beyond-heading>p:last-child br{display:none}.ambassador-entry{padding-left:27px;max-width:720px}.beyond-gallery{max-width:580px}}
 @media(max-width:640px){.beyond-section{padding-top:58px;gap:30px}.beyond-heading h2{font-size:47px;margin-top:19px}.beyond-heading>p:last-child{font-size:11px}.ambassador-entry{padding-left:18px}.ambassador-entry h3{font-size:25px;max-width:300px}.ambassador-meta{font-size:9px;gap:10px}.ambassador-status{font-size:9px}.ambassador-description{font-size:12px;line-height:1.85}.ambassador-skills>span{font-size:8px}.beyond-gallery{grid-template-columns:repeat(2,minmax(0,1fr));max-width:360px;gap:17px 12px;margin-top:24px}.beyond-gallery figcaption{font-size:10px;margin-top:7px}.beyond-photo{max-height:110px}}
+
+/* Certificate links retain the learning strip's compact layout. */
+.learning-strip .credential-link{display:inline-flex;align-items:center;gap:4px;min-height:28px;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
+.learning-strip .credential-link:hover,.learning-strip .credential-link:focus-visible{color:var(--accent);text-decoration-color:currentColor}
+.learning-strip .credential-link:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+.learning-strip .credential-arrow{font-size:1.15em;line-height:1;margin-left:2px}
