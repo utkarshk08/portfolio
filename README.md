@@ -2,7 +2,7 @@
 
 A responsive personal portfolio featuring software projects, technical skills, and campus activities. Built with HTML, CSS, and JavaScript, with locally hosted fonts and assets.
 
-This repository publishes [https://utkarshkhandelwal.me](https://utkarshkhandelwal.me) through GitHub Pages with HTTPS enforced. Its default project address, `https://utkarshk08.github.io/portfolio/`, redirects to the custom domain.
+This repository publishes [https://utkarshkhandelwal.me](https://utkarshkhandelwal.me) through GitHub Pages with HTTPS enforced. Use the custom domain as this deployment's public address.
 
 The original [https://utkarshk08.github.io](https://utkarshk08.github.io) site stays in the [`utkarshk08.github.io` repository](https://github.com/utkarshk08/utkarshk08.github.io) and must keep its custom-domain setting empty. The `.me` domain and its `CNAME` file belong only in this repository, so both root addresses continue working independently.
 
