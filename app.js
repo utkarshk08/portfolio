@@ -8,6 +8,7 @@
   if (g && scrollPlugin) g.registerPlugin(scrollPlugin);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const desktop = matchMedia('(min-width: 801px)');
+  const tallViewport = matchMedia('(min-height: 850px)');
   let motion = document.documentElement.dataset.motion !== 'off' && !reduced.matches;
   let animationContext = null;
   let scene = null;
@@ -44,7 +45,7 @@
         const cards = $$('.project-panel');
         cards.forEach((card,i) => {
           g.from($('.project-art',card), {y:45,rotate:1.4,opacity:.65,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:card,start:'top 85%',once:true}});
-          if (cards[i+1]) g.to(card, {scale:.955,opacity:.6,y:-10,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top 75%',end:'top 110px',scrub:true}});
+          if (cards[i+1] && tallViewport.matches) g.to(card, {scale:.955,opacity:.6,y:-10,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top 75%',end:'top 110px',scrub:true}});
         });
       } else {
         $$('.project-art').forEach(el => g.from(el,{y:22,opacity:.55,duration:.85,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 94%',once:true}}));
@@ -73,6 +74,7 @@
     setMotion(!reduced.matches && stored !== 'off');
   });
   desktop.addEventListener('change', makeAnimations);
+  tallViewport.addEventListener('change', makeAnimations);
   updateMotionLabel();
   makeAnimations();
   document.fonts?.ready.then(() => scrollPlugin?.refresh());
@@ -184,6 +186,15 @@
     try{await navigator.clipboard.writeText('utkarshk0804@gmail.com');showToast('Email copied. Let’s make something good.');}
     catch(_){showToast('You can select and copy the email address above.');}
   });
+  $('.portrait-colour').addEventListener('click',()=>{
+    const button=$('.portrait-colour');
+    const colour=button.getAttribute('aria-pressed')!=='true';
+    button.setAttribute('aria-pressed',String(colour));
+    button.setAttribute('aria-label',colour?'Show portrait in black and white':'Show portrait in colour');
+    $('.portrait-card').dataset.colour=String(colour);
+    $('.portrait-colour-label').textContent=colour?'Monochrome':'In colour';
+  });
+
   // BFCache restoration should preserve a usable page without a stale transition.
   addEventListener('pageshow',event=>{if(event.persisted){scrollPlugin?.refresh();updateScroll();}});
 })();

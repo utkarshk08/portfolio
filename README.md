@@ -22,13 +22,20 @@ Open http://127.0.0.1:8767/. The checked-in generated assets can also be served 
 - `src/scene.js`: procedural 3D sculpture; no external model files.
 - `content.js`: project case studies and verified source/live links.
 - `exhibits.html`, `exhibits.css`, `exhibits.js`: self-contained interactive concept previews. Expense transactions are invented sample data.
-- `assets/`: fonts, optimized activity images, résumé, and generated browser bundles.
+- `personal.css`: portrait and About-section presentation, plus the short-viewport project-card fix.
+- `assets/`: fonts, optimized activity images, portrait, résumé, and generated browser bundles.
 
 Run `npm run build` after changes. It assembles `index.html`, bundles Three.js, copies local GSAP files, and fingerprints stylesheet/script URLs so previews pick up revisions.
 
 ## Motion and accessibility
 
 Motion respects the system reduced-motion preference and can be paused with the header control. The sculpture pauses when offscreen or hidden and retains a CSS fallback when WebGL is unavailable. Project dialogs use native modal focus handling. CutRoom posters support arrow keys and R to rotate; the expense ledger is keyboard-scrollable.
+
+## Personal-section revision
+
+The About section includes a portrait, a monochrome/colour toggle, and a personal introduction. The portrait retains the original face and setting, is resized, and has metadata removed. The original hero, project presentation, and Beyond the Surface interaction are preserved.
+
+This revision is approved for the custom-domain deployment at https://utkarshkhandelwal.me/.
 
 ## Preview validation
 
